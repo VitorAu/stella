@@ -22,7 +22,7 @@ experimental.
 
 - [x] Integrate Entity-Component-System
 - [x] Integrate Scene management
-- [ ] Input system
+- [x] Input system
 - [ ] Movement system
 - [ ] Render system
 - [ ] Physics system
