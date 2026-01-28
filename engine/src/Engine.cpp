@@ -28,8 +28,9 @@ void Engine::Init()
 
     controller.m_controllerMode = CONTROLLER_MODE::PLAYER;
     position.m_position = {100.0f, 100.0f};
-    rigidBody.m_maxVelocity = 1000.0f;
-    rigidBody.m_maxAcceleration = 10000.0f;
+    rigidBody.m_maxVelocity = 400.0f;
+    rigidBody.m_maxAcceleration = 4000.0f;
+    rigidBody.m_friction = 10.0f;
     render.m_texture = LoadTexture("assets/sprites/char.png");
     render.m_srcRect = {0, 0, 48, 48};
     render.m_scale = 10.0f;

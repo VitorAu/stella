@@ -10,6 +10,7 @@ struct CRigidBody
 
     float m_maxVelocity = 0.0f;
     float m_maxAcceleration = 0.0f;
+    float m_friction = 0.0f;
     float m_mass = 1.0f;
 
     bool m_isStatic = false;
