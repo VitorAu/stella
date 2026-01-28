@@ -1,25 +1,35 @@
 #include "systems/PhysicsSystem.h"
 
-#include "scribe.h"
 #include "raymath.h"
+#include "scribe.h"
 
 void PhysicsSystem::Update(Scene &scene, float dt)
 {
-    for (auto &e : scene.SceneEntities())
+    for (const auto &e : scene.SceneEntities())
     {
         CController *controller = scene.SceneController(*e);
         CPosition *position = scene.ScenePosition(*e);
-        CRigidBody *rigid_body = scene.SceneRigidBody(*e);
-        if (!controller || !position || !rigid_body) continue;
-        if (rigid_body->m_isStatic) continue;
+        CRigidBody *rigidBody = scene.SceneRigidBody(*e);
+        if (!controller || !position || !rigidBody) continue;
+        if (rigidBody->m_isStatic) continue;
 
-        rigid_body->m_acceleration = Vector2Scale(controller->m_direction, rigid_body->m_maxAcceleration);
-        rigid_body->m_velocity = Vector2Scale(rigid_body->m_acceleration, dt);
+        if (Vector2Length(controller->m_direction) > 0.0f)
+        {
+            rigidBody->m_acceleration = Vector2Scale(controller->m_direction, rigidBody->m_maxAcceleration);
+            rigidBody->m_velocity = Vector2Add(rigidBody->m_velocity, Vector2Scale(rigidBody->m_acceleration, dt));
+            rigidBody->m_velocity = Vector2ClampValue(rigidBody->m_velocity, 0.0f, rigidBody->m_maxVelocity);
+        }
+        else
+        {
+            float friction = 1.0f - rigidBody->m_friction * dt;
+            rigidBody->m_velocity = Vector2Scale(rigidBody->m_velocity, friction);
+            rigidBody->m_acceleration = {0.0f, 0.0f};
+        }
 
-        position->m_position = Vector2Add(position->m_position, Vector2Scale(rigid_body->m_velocity, dt));
+        position->m_position = Vector2Add(position->m_position, Vector2Scale(rigidBody->m_velocity, dt));
 
-        Scribe::Debug("Acceleration: {" ,rigid_body->m_acceleration.x, ", ", rigid_body->m_acceleration.y, "}");
-        Scribe::Debug("Velocity: {", rigid_body->m_velocity.x, ", ", rigid_body->m_velocity.y, "}");
+        Scribe::Debug("Acceleration: {", rigidBody->m_acceleration.x, ", ", rigidBody->m_acceleration.y, "}");
+        Scribe::Debug("Velocity: {", rigidBody->m_velocity.x, ", ", rigidBody->m_velocity.y, "}");
         Scribe::Debug("Position: {", position->m_position.x, ", ", position->m_position.y, "}");
     }
 }
