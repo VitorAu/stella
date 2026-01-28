@@ -1,7 +1,10 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#include "components/CController.h"
 #include "components/CInput.h"
+#include "components/CPosition.h"
+#include "components/CRigidBody.h"
 #include "ecs/EntityManager.h"
 
 #include <cstddef>
@@ -13,7 +16,11 @@ class Scene
 {
   private:
     EntityManager m_sceneEntities;
+
     EntityComponentMap<CInput> m_sceneInputs;
+    EntityComponentMap<CController> m_sceneControllers;
+    EntityComponentMap<CPosition> m_scenePositions;
+    EntityComponentMap<CRigidBody> m_sceneRigidBodies;
 
   public:
     Scene();
@@ -24,8 +31,14 @@ class Scene
     const EntityVector &SceneEntities(const std::string &tag);
 
     CInput *SceneInput(const Entity &e);
+    CController *SceneController(const Entity &e);
+    CPosition *ScenePosition(const Entity &e);
+    CRigidBody *SceneRigidBody(const Entity &e);
 
-    void SceneAddInput(const CInput &c, const Entity &e);
+    void SceneAddInput(const Entity &e, const CInput &c);
+    void SceneAddController(const Entity &e, const CController &c);
+    void SceneAddPosition(const Entity &e, const CPosition &c);
+    void SceneAddRigidBody(const Entity &e, const CRigidBody &c);
 
     void Update();
 };

@@ -7,10 +7,7 @@ void InputSystem::Update(Scene &scene)
     for (auto &e : scene.SceneEntities())
     {
         CInput *cInput = scene.SceneInput(*e);
-        if (!cInput)
-        {
-            continue;
-        }
+        if (!cInput) continue;
 
         cInput->m_up = IsKeyDown(KEY_W);
         cInput->m_down = IsKeyDown(KEY_S);

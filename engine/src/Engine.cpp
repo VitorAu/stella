@@ -21,8 +21,19 @@ void Engine::Init()
 
     auto player = m_scene.SceneAddEntity("player");
     CInput input;
+    CController controller;
+    CPosition position;
+    CRigidBody rigidBody;
 
-    m_scene.SceneAddInput(input, *player);
+    controller.m_controllerMode = CONTROLLER_MODE::PLAYER;
+    position.m_position = {100.0f, 100.0f};
+    rigidBody.m_maxVelocity = 100.0f;
+    rigidBody.m_maxAcceleration = 100.0f;
+
+    m_scene.SceneAddInput(*player, input);
+    m_scene.SceneAddController(*player, controller);
+    m_scene.SceneAddPosition(*player, position);
+    m_scene.SceneAddRigidBody(*player, rigidBody);
 
     m_running = true;
 }
