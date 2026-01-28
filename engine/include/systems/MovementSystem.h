@@ -6,7 +6,7 @@
 class MovementSystem
 {
   public:
-    void Update(Scene &scene);
+    static void Update(Scene &scene);
 };
 
 #endif

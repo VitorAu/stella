@@ -10,6 +10,7 @@ target_sources(engine
 
         src/systems/InputSystem.cpp
         src/systems/MovementSystem.cpp
+        src/systems/PhysicsSystem.cpp
 )
 
 target_include_directories(engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
