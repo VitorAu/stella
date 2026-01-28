@@ -5,7 +5,7 @@
 
 void PhysicsSystem::Update(Scene &scene, float dt)
 {
-    for (auto &e : scene.SceneEntities())
+    for (const auto &e : scene.SceneEntities())
     {
         CController *controller = scene.SceneController(*e);
         CPosition *position = scene.ScenePosition(*e);
@@ -18,8 +18,8 @@ void PhysicsSystem::Update(Scene &scene, float dt)
 
         position->m_position = Vector2Add(position->m_position, Vector2Scale(rigid_body->m_velocity, dt));
 
-        Scribe::Debug("Acceleration: {" ,rigid_body->m_acceleration.x, ", ", rigid_body->m_acceleration.y, "}");
-        Scribe::Debug("Velocity: {", rigid_body->m_velocity.x, ", ", rigid_body->m_velocity.y, "}");
-        Scribe::Debug("Position: {", position->m_position.x, ", ", position->m_position.y, "}");
+        // Scribe::Debug("Acceleration: {" ,rigid_body->m_acceleration.x, ", ", rigid_body->m_acceleration.y, "}");
+        // Scribe::Debug("Velocity: {", rigid_body->m_velocity.x, ", ", rigid_body->m_velocity.y, "}");
+        // Scribe::Debug("Position: {", position->m_position.x, ", ", position->m_position.y, "}");
     }
 }

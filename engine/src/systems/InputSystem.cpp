@@ -4,7 +4,7 @@
 
 void InputSystem::Update(Scene &scene)
 {
-    for (auto &e : scene.SceneEntities())
+    for (const auto &e : scene.SceneEntities())
     {
         CInput *cInput = scene.SceneInput(*e);
         if (!cInput) continue;

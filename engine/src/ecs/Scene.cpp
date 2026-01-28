@@ -3,6 +3,7 @@
 #include "systems/InputSystem.h"
 #include "systems/MovementSystem.h"
 #include "systems/PhysicsSystem.h"
+#include "systems/RenderSystem.h"
 
 Scene::Scene() = default;
 
@@ -52,6 +53,13 @@ CRigidBody *Scene::SceneRigidBody(const Entity &e)
     return it != m_sceneRigidBodies.end() ? &it->second : nullptr;
 }
 
+CRender *Scene::SceneRender(const Entity &e)
+{
+    std::size_t eId = e.Id();
+    auto it = m_sceneRenders.find(eId);
+    return it != m_sceneRenders.end() ? &it->second : nullptr;
+}
+
 void Scene::SceneAddInput(const Entity &e, const CInput &c)
 {
     std::size_t eId = e.Id();
@@ -76,6 +84,12 @@ void Scene::SceneAddRigidBody(const Entity &e, const CRigidBody &c)
     m_sceneRigidBodies[eId] = c;
 }
 
+void Scene::SceneAddRender(const Entity &e, const CRender &c)
+{
+    std::size_t eId = e.Id();
+    m_sceneRenders[eId] = c;
+}
+
 void Scene::Update()
 {
     float dt = GetFrameTime();
@@ -84,4 +98,5 @@ void Scene::Update()
     InputSystem::Update(*this);
     MovementSystem::Update(*this);
     PhysicsSystem::Update(*this, dt);
+    RenderSystem::Update(*this);
 }

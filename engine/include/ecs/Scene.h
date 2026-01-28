@@ -4,6 +4,7 @@
 #include "components/CController.h"
 #include "components/CInput.h"
 #include "components/CPosition.h"
+#include "components/CRender.h"
 #include "components/CRigidBody.h"
 #include "ecs/EntityManager.h"
 
@@ -21,6 +22,7 @@ class Scene
     EntityComponentMap<CController> m_sceneControllers;
     EntityComponentMap<CPosition> m_scenePositions;
     EntityComponentMap<CRigidBody> m_sceneRigidBodies;
+    EntityComponentMap<CRender> m_sceneRenders;
 
   public:
     Scene();
@@ -34,11 +36,13 @@ class Scene
     CController *SceneController(const Entity &e);
     CPosition *ScenePosition(const Entity &e);
     CRigidBody *SceneRigidBody(const Entity &e);
+    CRender *SceneRender(const Entity &e);
 
     void SceneAddInput(const Entity &e, const CInput &c);
     void SceneAddController(const Entity &e, const CController &c);
     void SceneAddPosition(const Entity &e, const CPosition &c);
     void SceneAddRigidBody(const Entity &e, const CRigidBody &c);
+    void SceneAddRender(const Entity &e, const CRender &c);
 
     void Update();
 };
