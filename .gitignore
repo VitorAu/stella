@@ -69,3 +69,6 @@ Testing/
 
 # ide files
 .idea/
+
+# macOs files
+.DS_Store
