@@ -1,7 +1,7 @@
 #ifndef COMPONENTS_HPP
 #define COMPONENTS_HPP
 
-#include "raylib.h"
+#include <raylib.h>
 
 class CRender
 {

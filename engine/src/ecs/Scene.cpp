@@ -1,6 +1,8 @@
 #include "ecs/Scene.hpp"
+
+#include <raylib.h>
+
 #include "ecs/EntityManager.hpp"
-#include "raylib.h"
 #include "systems/Systems.hpp"
 
 Scene::Scene() = default;
