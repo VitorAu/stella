@@ -19,14 +19,5 @@ class CTransform
     float m_y = 0.0f;
 };
 
-class CInput
-{
-  public:
-    bool m_up = false;
-    bool m_down = false;
-    bool m_left = false;
-    bool m_right = false;
-};
-
 #endif
 

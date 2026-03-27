@@ -26,6 +26,20 @@ const EntityVector &Scene::SceneEntities(std::string &tag)
     return m_sceneEntities.Entities(tag);
 }
 
+CInput *Scene::SceneInput(const Entity &e)
+{
+    std::size_t eId = e.Id();
+    auto it = m_sceneInputs.find(eId);
+    return it != m_sceneInputs.end() ? &it->second : nullptr;
+}
+
+CController *Scene::SceneController(const Entity &e)
+{
+    std::size_t eId = e.Id();
+    auto it = m_sceneControllers.find(eId);
+    return it != m_sceneControllers.end() ? &it->second : nullptr;
+}
+
 CRender *Scene::SceneRender(const Entity &e)
 {
     std::size_t eId = e.Id();
@@ -40,11 +54,16 @@ CTransform *Scene::SceneTransform(const Entity &e)
     return it != m_sceneTransforms.end() ? &it->second : nullptr;
 }
 
-CInput *Scene::SceneInput(const Entity &e)
+void Scene::SceneAddInput(const CInput &c, const Entity &e)
 {
     std::size_t eId = e.Id();
-    auto it = m_sceneInputs.find(eId);
-    return it != m_sceneInputs.end() ? &it->second : nullptr;
+    m_sceneInputs[eId] = c;
+}
+
+void Scene::SceneAddController(const CController &c, const Entity &e)
+{
+    std::size_t eId = e.Id();
+    m_sceneControllers[eId] = c;
 }
 
 void Scene::SceneAddRender(const CRender &c, const Entity &e)
@@ -57,12 +76,6 @@ void Scene::SceneAddTransform(const CTransform &c, const Entity &e)
 {
     std::size_t eId = e.Id();
     m_sceneTransforms[eId] = c;
-}
-
-void Scene::SceneAddInput(const CInput &c, const Entity &e)
-{
-    std::size_t eId = e.Id();
-    m_sceneInputs[eId] = c;
 }
 
 void Scene::Update()
