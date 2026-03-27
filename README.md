@@ -16,8 +16,8 @@ Stela is **early in development**. Core systems are being designed and implement
 ## ✅ TODO
 
 ### Core Engine
-- [ ] Integrate Entity-Component-System
-- [ ] Integrate Scene management
+- [x] Integrate Entity-Component-System
+- [x] Integrate Scene management
 - [ ] Input system
 - [ ] Movement system
 - [ ] Render system
