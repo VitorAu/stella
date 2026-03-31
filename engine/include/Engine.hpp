@@ -18,4 +18,4 @@ class Engine
     void Quit();
 };
 
-#endif
+#endif // !ENGINE_HPP

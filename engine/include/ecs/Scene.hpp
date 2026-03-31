@@ -48,4 +48,4 @@ class Scene
     void Update();
 };
 
-#endif
+#endif // !SCENE_HPP

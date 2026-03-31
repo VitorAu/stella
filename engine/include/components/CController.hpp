@@ -16,4 +16,4 @@ struct CController
     Vector2 m_direction = {0.0f, 0.0f};
 };
 
-#endif
+#endif // !CCONTROLLER_HPP

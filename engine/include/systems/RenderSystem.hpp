@@ -9,4 +9,4 @@ class RenderSystem
     static void Update(Scene &);
 };
 
-#endif
+#endif // !RENDERSYSTEM_HPP

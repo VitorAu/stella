@@ -21,7 +21,7 @@ bool Entity::IsActive()
     return m_isActive;
 }
 
-void Entity::Destroy()
+void Entity::Deactivate()
 {
     m_isActive = false;
 }

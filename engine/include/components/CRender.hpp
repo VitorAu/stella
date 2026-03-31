@@ -14,4 +14,4 @@ struct CRender
     float m_scale = 1.0f;
 };
 
-#endif
+#endif // !CRENDER_HPP

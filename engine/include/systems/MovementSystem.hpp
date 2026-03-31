@@ -9,4 +9,4 @@ class MovementSystem
     static void Update(Scene &);
 };
 
-#endif
+#endif // !MOVEMENTSYSTEM_HPP

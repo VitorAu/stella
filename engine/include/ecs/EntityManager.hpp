@@ -35,4 +35,4 @@ class EntityManager
     ~EntityManager();
 };
 
-#endif
+#endif // !ENTITYMANAGER_HPP

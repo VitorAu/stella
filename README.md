@@ -1,6 +1,6 @@
-# Germinare
+# Stella
 
-**Germinare** is a game project built in C++ using **raylib**.  
+**Stella** is a game project built in C++ using **raylib**.  
 The goal of the project is to explore game mechanics, systems design, and engine architecture while building a complete,
 playable experience from the ground up.
 
@@ -11,7 +11,7 @@ experimentation.
 
 ## 🚧 Project Status
 
-Germinare is **early in development**. Core systems are being designed and implemented, and many features are still
+Stella is **early in development**. Core systems are being designed and implemented, and many features are still
 experimental.
 
 ---
@@ -35,7 +35,7 @@ experimental.
 ### Clone
 
 ```bash
-git clone https://github.com/VitorAu/germinare.git
+git clone https://github.com/VitorAu/stella.git
 cd ingenium
 git submodule update --init
 ```

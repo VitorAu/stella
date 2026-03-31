@@ -10,4 +10,4 @@ struct CInput
     bool m_jump = false;
 };
 
-#endif
+#endif // !CINPUT_HPP

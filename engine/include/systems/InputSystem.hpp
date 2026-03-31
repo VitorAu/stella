@@ -9,4 +9,4 @@ class InputSystem
     static void Update(Scene &);
 };
 
-#endif
+#endif // !INPUTSYSTEM_HPP

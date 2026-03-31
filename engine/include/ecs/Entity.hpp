@@ -24,7 +24,7 @@ class Entity
     const std::string &Tag() const;
     bool IsActive();
     
-    void Destroy();
+    void Deactivate();
 };
 
-#endif
+#endif // !ENTITY_HPP

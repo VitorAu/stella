@@ -16,4 +16,4 @@ struct CRigidBody
     bool m_isStatic = false;
 };
 
-#endif
+#endif // !CRIGIDBODY_HPP
