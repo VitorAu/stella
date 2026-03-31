@@ -1,7 +1,8 @@
-#include "Engine.h"
+#include "Engine.hpp"
 
-#include "ecs/Scene.h"
-#include "raylib.h"
+#include <raylib.h>
+
+#include "ecs/Scene.hpp"
 
 Scene m_scene;
 

@@ -1,7 +1,7 @@
-#ifndef CRENDER_H
-#define CRENDER_H
+#ifndef CRENDER_HPP
+#define CRENDER_HPP
 
-#include "raylib.h"
+#include <raylib.h>
 
 struct CRender
 {

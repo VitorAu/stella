@@ -1,7 +1,6 @@
-#include "systems/PhysicsSystem.h"
+#include "systems/PhysicsSystem.hpp"
 
-#include "raymath.h"
-#include "scribe.h"
+#include <raymath.h>
 
 void PhysicsSystem::Update(Scene &scene, float dt)
 {
@@ -27,9 +26,5 @@ void PhysicsSystem::Update(Scene &scene, float dt)
         }
 
         position->m_position = Vector2Add(position->m_position, Vector2Scale(rigidBody->m_velocity, dt));
-
-        Scribe::Debug("Acceleration: {", rigidBody->m_acceleration.x, ", ", rigidBody->m_acceleration.y, "}");
-        Scribe::Debug("Velocity: {", rigidBody->m_velocity.x, ", ", rigidBody->m_velocity.y, "}");
-        Scribe::Debug("Position: {", position->m_position.x, ", ", position->m_position.y, "}");
     }
 }

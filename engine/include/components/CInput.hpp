@@ -1,5 +1,5 @@
-#ifndef CINPUT_H
-#define CINPUT_H
+#ifndef CINPUT_HPP
+#define CINPUT_HPP
 
 struct CInput
 {

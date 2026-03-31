@@ -1,7 +1,7 @@
-#ifndef CRIGIDBODY_H
-#define CRIGIDBODY_H
+#ifndef CRIGIDBODY_HPP
+#define CRIGIDBODY_HPP
 
-#include "raylib.h"
+#include <raylib.h>
 
 struct CRigidBody
 {

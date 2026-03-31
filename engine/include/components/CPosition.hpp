@@ -1,7 +1,7 @@
-#ifndef CPOSITION_H
-#define CPOSITION_H
+#ifndef CPOSITION_HPP
+#define CPOSITION_HPP
 
-#include "raylib.h"
+#include <raylib.h>
 
 struct CPosition
 {

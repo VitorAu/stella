@@ -1,7 +1,6 @@
-#include "systems/MovementSystem.h"
+#include "systems/MovementSystem.hpp"
 
-#include "components/CController.h"
-#include "scribe.h"
+#include "components/CController.hpp"
 
 void MovementSystem::Update(Scene &scene)
 {
@@ -16,7 +15,5 @@ void MovementSystem::Update(Scene &scene)
         Vector2 direction = Vector2(xDirection, yDirection);
 
         controller->m_direction = direction;
-
-        // Scribe::Debug("Direction: {", controller->m_direction.x, ", ", controller->m_direction.y, "}");
     }
 }

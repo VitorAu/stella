@@ -1,6 +1,6 @@
-#include "systems/InputSystem.h"
+#include "systems/InputSystem.hpp"
 
-#include "raylib.h"
+#include <raylib.h>
 
 void InputSystem::Update(Scene &scene)
 {

@@ -1,7 +1,7 @@
-#ifndef CCONTROLLER_H
-#define CCONTROLLER_H
+#ifndef CCONTROLLER_HPP
+#define CCONTROLLER_HPP
 
-#include "raylib.h"
+#include <raylib.h>
 
 enum struct CONTROLLER_MODE
 {

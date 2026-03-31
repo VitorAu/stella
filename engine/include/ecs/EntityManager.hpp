@@ -1,7 +1,7 @@
-#ifndef ENTITYMANAGER_H
-#define ENTITYMANAGER_H
+#ifndef ENTITYMANAGER_HPP
+#define ENTITYMANAGER_HPP
 
-#include "ecs/Entity.h"
+#include "ecs/Entity.hpp"
 
 #include <memory>
 #include <unordered_map>
@@ -23,9 +23,9 @@ class EntityManager
     EntityMap m_entitiesMap;
     std::size_t m_entitiesTotal = 0;
 
-    EntityPointer CreateEntity(const std::string &entityTag);
+    EntityPointer CreateEntity(const std::string &);
     const EntityVector &Entities();
-    const EntityVector &Entities(const std::string &entityTag);
+    const EntityVector &Entities(const std::string &);
 
     void Update();
     void Delete();

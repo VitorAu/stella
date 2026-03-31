@@ -1,4 +1,4 @@
-#include "ecs/Entity.h"
+#include "ecs/Entity.hpp"
 
 Entity::Entity(const std::size_t id, const std::string &tag) : m_id(id), m_tag(tag)
 {

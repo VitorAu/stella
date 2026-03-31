@@ -1,5 +1,5 @@
-#ifndef ENTITY_H
-#define ENTITY_H
+#ifndef ENTITY_HPP
+#define ENTITY_HPP
 
 #include <cstddef>
 #include <string>
@@ -15,7 +15,7 @@ class Entity
     const std::string m_tag;
     bool m_isActive = true;
 
-    Entity(const std::size_t id, const std::string &tag);
+    Entity(const std::size_t, const std::string &);
 
   public:
     ~Entity();

@@ -1,5 +1,5 @@
-#ifndef ENGINE_H
-#define ENGINE_H
+#ifndef ENGINE_HPP
+#define ENGINE_HPP
 
 class Engine
 {
@@ -10,7 +10,7 @@ class Engine
     bool m_running = false;
 
   public:
-    Engine(const int screenWidth, const int screenHeight, const char *screenTitle);
+    Engine(const int, const int, const char *);
     ~Engine();
 
     void Init();

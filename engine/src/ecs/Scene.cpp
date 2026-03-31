@@ -1,9 +1,9 @@
-#include "ecs/Scene.h"
+#include "ecs/Scene.hpp"
 
-#include "systems/InputSystem.h"
-#include "systems/MovementSystem.h"
-#include "systems/PhysicsSystem.h"
-#include "systems/RenderSystem.h"
+#include "systems/InputSystem.hpp"
+#include "systems/MovementSystem.hpp"
+#include "systems/PhysicsSystem.hpp"
+#include "systems/RenderSystem.hpp"
 
 Scene::Scene() = default;
 

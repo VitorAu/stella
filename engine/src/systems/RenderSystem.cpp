@@ -1,4 +1,4 @@
-#include "systems/RenderSystem.h"
+#include "systems/RenderSystem.hpp"
 
 void RenderSystem::Update(Scene &scene)
 {
