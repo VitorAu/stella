@@ -32,6 +32,8 @@ class Scene
     ~Scene();
 
     EntityPointer SceneAddEntity(const std::string &);
+
+    const EntityPointer SceneEntity(std::size_t);
     const EntityVector &SceneEntities();
     const EntityVector &SceneEntities(const std::string &);
 

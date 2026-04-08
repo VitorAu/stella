@@ -2,16 +2,25 @@
 
 #include "components/CCamera.hpp"
 #include "components/CPosition.hpp"
+#include "ecs/EntityManager.hpp"
 
 void CameraSystem::Update(Scene &scene)
 {
     for (auto &e : scene.SceneEntities())
     {
-        CPosition *position = scene.ScenePosition(*e);
         CCamera *camera = scene.SceneCamera(*e);
 
-        if (!position || !camera) continue;
+        if (!camera) continue;
+        if (camera->m_target == 0) continue;
 
-        camera->m_camera.target = {position->m_position.x + 20, position->m_position.y + 20};
+        const EntityPointer &target = scene.SceneEntity(camera->m_target);
+        if (!target) continue;
+
+        CPosition *position = scene.ScenePosition(*target);
+        CRender *render = scene.SceneRender(*target);
+        if (!position || !render) continue;
+
+        camera->m_camera.target = {position->m_position.x + render->m_srcRect.width * render->m_scale / 2.0f,
+                                   position->m_position.y + render->m_srcRect.height * render->m_scale / 2.0f};
     }
 }

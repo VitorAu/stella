@@ -37,6 +37,7 @@ void Engine::Init()
     render.m_texture = LoadTexture("assets/sprites/char.png");
     render.m_srcRect = {0, 0, 48, 48};
     render.m_scale = 10.0f;
+    camera.m_target = player->Id();
     camera.m_camera.target = {position.m_position.x + 20.0f, position.m_position.y + 20.0f};
     camera.m_camera.offset = {m_screenWidth / 2.0f, m_screenHeight / 2.0f};
     camera.m_camera.rotation = 0.0f;

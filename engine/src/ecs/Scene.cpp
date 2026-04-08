@@ -1,6 +1,7 @@
 #include "ecs/Scene.hpp"
 
 #include "systems/CameraSystem.hpp"
+#include "systems/DebugSystem.hpp"
 #include "systems/InputSystem.hpp"
 #include "systems/MovementSystem.hpp"
 #include "systems/PhysicsSystem.hpp"
@@ -14,6 +15,11 @@ EntityPointer Scene::SceneAddEntity(const std::string &tag)
 {
     auto e = m_sceneEntities.CreateEntity(tag);
     return e;
+}
+
+const EntityPointer Scene::SceneEntity(const std::size_t id)
+{
+    return m_sceneEntities.Entity(id);
 }
 
 const EntityVector &Scene::SceneEntities()
@@ -124,4 +130,6 @@ void Scene::Update()
     PhysicsSystem::Update(*this, dt);
     CameraSystem::Update(*this);
     RenderSystem::Update(*this);
+
+    DebugSystem::Update(*this);
 }
