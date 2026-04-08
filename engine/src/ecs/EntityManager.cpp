@@ -6,10 +6,20 @@ EntityManager::~EntityManager() = default;
 
 EntityPointer EntityManager::CreateEntity(const std::string &entityTag)
 {
-    EntityPointer e(new Entity(m_entitiesTotal++, entityTag));
+    EntityPointer e(new class Entity(++m_entitiesTotal, entityTag));
     m_entitiesToAdd.push_back(e);
 
     return e;
+}
+
+const EntityPointer EntityManager::Entity(const std::size_t id)
+{
+    for (auto &e : m_entitiesVec)
+    {
+        if (e->Id() == id) return e;
+    }
+
+    return nullptr;
 }
 
 const EntityVector &EntityManager::Entities()

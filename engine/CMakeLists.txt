@@ -12,6 +12,8 @@ target_sources(engine
         src/systems/MovementSystem.cpp
         src/systems/PhysicsSystem.cpp
         src/systems/RenderSystem.cpp
+        src/systems/CameraSystem.cpp
+        src/systems/DebugSystem.cpp
 )
 
 target_include_directories(engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

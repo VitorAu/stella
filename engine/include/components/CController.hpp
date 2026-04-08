@@ -3,7 +3,7 @@
 
 #include <raylib.h>
 
-enum struct CONTROLLER_MODE
+enum struct ControllerMode
 {
     NONE,
     AI,
@@ -12,7 +12,7 @@ enum struct CONTROLLER_MODE
 
 struct CController
 {
-    CONTROLLER_MODE m_controllerMode;
+    ControllerMode m_controllerMode;
     Vector2 m_direction = {0.0f, 0.0f};
 };
 

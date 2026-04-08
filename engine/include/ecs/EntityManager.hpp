@@ -24,6 +24,8 @@ class EntityManager
     std::size_t m_entitiesTotal = 0;
 
     EntityPointer CreateEntity(const std::string &);
+
+    const EntityPointer Entity(const std::size_t);
     const EntityVector &Entities();
     const EntityVector &Entities(const std::string &);
 
