@@ -6,7 +6,7 @@ EntityManager::~EntityManager() = default;
 
 EntityPointer EntityManager::CreateEntity(const std::string &entityTag)
 {
-    EntityPointer e(new class Entity(m_entitiesTotal++, entityTag));
+    EntityPointer e(new class Entity(++m_entitiesTotal, entityTag));
     m_entitiesToAdd.push_back(e);
 
     return e;
